@@ -3,14 +3,18 @@ import locationPic from "../../../../public/location.png";
 import locationIndicator from "../../../../public/bluedot.png";
 
 const LocationSection = () => {
-    return (
-    <div className="relative h-[400px] w-[800px] overflow-hidden rotate-3 rounded-[28px] shadow-[0_20px_40px_rgba(0,0,0,0.45)]
+  return (
+    <div
+      className="
+      relative mx-auto w-full max-w-4xl aspect-[5/4] md:aspect-video 
+      
+      overflow-hidden rotate-2 md:rotate-3 rounded-[28px] 
+      shadow-[0_20px_40px_rgba(0,0,0,0.45)]
       transition-all duration-300 ease-in-out
-      hover:rotate-0
-      hover:-translate-y-4
+      hover:rotate-0 hover:-translate-y-4
       hover:shadow-2xl hover:shadow-cyan-400/50
-    ">
-
+    "
+    >
       <Image
         src={locationPic}
         alt="Map showing New York"
@@ -25,14 +29,16 @@ const LocationSection = () => {
         }}
       />
 
-      <div className="
+      <div
+        className="
         pointer-events-none
         absolute
         left-[51%]
-        top-[55%]
+        top-[40%] md:top-[55%] 
         -translate-x-1/2
         -translate-y-1/2
-      ">
+        w-24 md:w-32"
+      >
         <Image
           src={locationIndicator}
           alt="Current location indicator"
@@ -43,29 +49,20 @@ const LocationSection = () => {
       </div>
 
       <div className="absolute bottom-0 w-full">
-        {/* Glass container */}
         <div className="relative overflow-hidden rounded-b-[28px]">
-
-            {/* Glass base */}
-            <div className="
-            bg-neutral-900/0
-            backdrop-blur-[22px]
-            ">
+          <div className="bg-black/20 backdrop-blur-[22px]">
             <div className="absolute inset-x-0 top-0 h-px bg-white/20" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
-            <div className="relative px-6 py-5">
-                <p className="text-[11px] tracking-wide text-white/70">
+            <div className="relative px-5 py-4 md:px-6 md:py-5">
+              <p className="text-[10px] md:text-[11px] tracking-wide text-white/70 uppercase">
                 Currently based in
-                </p>
-                <p className="mt-1 text-[22px] font-semibold leading-tight text-white">
+              </p>
+              <p className="mt-0.5 text-lg md:text-[22px] font-semibold leading-tight text-white">
                 New York, United States
-                </p>
+              </p>
             </div>
-
-            </div>
+          </div>
         </div>
-    </div>
-
+      </div>
     </div>
   );
 };

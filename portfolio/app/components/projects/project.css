@@ -1,8 +1,45 @@
 @import "tailwindcss";
 
-.project-section-container {
-    display: flex;
-    min-height: 100vh;
-    width: 100%;
-    background-color: #f5f5f7;
+body {
+  background-color: white;
+  transition: background-color 0.8s ease, color 0.8s ease;
+  margin: 0;
+  padding: 0;
+}
+
+body.active-bg {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+grid-container {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  /* Mobile Default: 1 Column */
+  grid-template-areas: 
+    "box-1"
+    "box-2"
+    "box-3"
+    "box-4"
+    "box-5";
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    /* Desktop: Your specific layout */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "box-1 box-2 box-2 box-3"
+      "box-1 box-4 box-5 box-5";
+  }
+}
+
+.item {
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

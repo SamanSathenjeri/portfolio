@@ -1,19 +1,17 @@
-import Image from 'next/image';
+import Image from "next/image";
 import profilePic from "../../../../public/rutgers2.png";
 
 const IconTwoSection = () => {
-    return (
-        <section className="icon-section-container">
-            <Image
-                src={profilePic}
-                alt="Picture of the author"
-                width={300}
-                height={250}
-                objectFit="cover"
-                objectPosition="10% 10%"
-            />
-        </section>
-    );
+  return (
+    <section className="rounded-[20px] overflow-hidden max-w-[150px] h-auto ml-[20px] mt-auto">
+      <Image
+        src={profilePic}
+        alt="Picture of the author"
+        width={150}
+        height={250}
+      />
+    </section>
+  );
 };
 
 export default IconTwoSection;
